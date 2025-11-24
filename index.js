@@ -33,15 +33,23 @@ function logTransaction(type, amount) {
 }
 
 function renderTransactionTable() {
-  transactionTable.innerHTML = "";
-  transactions.forEach((t) => {
+    transactionTable.innerHTML = "";
+    transactions.forEach((t) => {
     const row = document.createElement("tr");
     row.innerHTML = `
-      <td class="p-2 border-b border-gray-700">${t.date}</td>
-      <td class="p-2 border-b border-gray-700">${t.type}</td>
-      <td class="p-2 border-b border-gray-700">BDT ${t.amount}</td>
-      <td class="p-2 border-b border-gray-700">BDT ${t.currentBalance}</td>
+        <td class="p-2 border-b border-gray-700">${t.date}</td>
+        <td class="p-2 border-b border-gray-700">${t.type}</td>
+        <td class="p-2 border-b border-gray-700">BDT ${t.amount}</td>
+        <td class="p-2 border-b border-gray-700">BDT ${t.currentBalance}</td>
     `;
     transactionTable.appendChild(row);
-  });
+    });
 }
+
+function showSection(section) {
+    addForm.classList.add("hidden");
+    withdrawForm.classList.add("hidden");
+    historySection.classList.add("hidden");
+    section.classList.remove("hidden");
+}
+
