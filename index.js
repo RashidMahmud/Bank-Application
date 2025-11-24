@@ -19,3 +19,16 @@ let transactions = [];
 function updateBalanceDisplay() {
     balanceDisplay.textContent = `BDT ${balance}`;
 }
+
+function logTransaction(type, amount) {
+    const date = new Date().toLocaleString();
+    const transaction = {
+    date,
+    type,
+    amount,
+    currentBalance: balance,
+    };
+    transactions.unshift(transaction);
+    renderTransactionTable();
+}
+
