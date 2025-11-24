@@ -53,3 +53,7 @@ function showSection(section) {
     section.classList.remove("hidden");
 }
 
+addBtn.addEventListener("click", () => showSection(addForm));
+withdrawBtn.addEventListener("click", () => showSection(withdrawForm));
+historyBtn.addEventListener("click", () => showSection(historySection));
+
