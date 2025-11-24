@@ -57,3 +57,14 @@ addBtn.addEventListener("click", () => showSection(addForm));
 withdrawBtn.addEventListener("click", () => showSection(withdrawForm));
 historyBtn.addEventListener("click", () => showSection(historySection));
 
+confirmAdd.addEventListener("click", () => {
+    const amount = parseFloat(addAmountInput.value);
+    if (isNaN(amount) || amount <= 0) {
+    alert("Please enter a valid positive amount.");
+    return;
+    }
+    balance += amount;
+    updateBalanceDisplay();
+    logTransaction("Add", amount);
+    addAmountInput.value = "";
+});
